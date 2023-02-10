@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ public class CountryController {
 	private CountryService countryService;
 
 	@RequestMapping(method = RequestMethod.POST, value = "/countries")
-	public List<Country> addCountries(List<Country> countries) {
+	public List<Country> addCountries(@RequestBody List<Country> countries) {
 		return countryService.addCountries(countries);
 	}
 
