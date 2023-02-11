@@ -18,6 +18,21 @@ public class ShipmentStageController {
 	public List<ShipmentStage> addShipmentStages(@RequestBody List<ShipmentStage> shipmentStages) {
 		return shipmentStageService.addShipmentStages(shipmentStages);
 	}
+	
+	@RequestMapping(method = RequestMethod.PUT, value="/shipmentstages")
+	public List<ShipmentStage> updateShipmentStages(@RequestBody List<ShipmentStage> shipmentStages) {
+		return shipmentStageService.addShipmentStages(shipmentStages);
+	}
+	
+	@RequestMapping("/shipmentstages")
+	public List<ShipmentStage> getShipmentStages() {
+		return shipmentStageService.getShipmentStages();
+	}
+	
+	@RequestMapping("/shipmentstage/{shipmentStage}/delete")
+	public void deleteShipmentStage(int shipmentStageId) {
+		shipmentStageService.deleteShipmentStage(shipmentStageId);
+	}
 
 
 }

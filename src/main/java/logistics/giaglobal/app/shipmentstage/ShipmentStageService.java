@@ -15,4 +15,12 @@ public class ShipmentStageService {
 	public List<ShipmentStage> addShipmentStages(List<ShipmentStage> shipmentStages) {
 		return (List<ShipmentStage>) shipmentStageRepository.saveAll(shipmentStages);
 	}
+	
+	public List<ShipmentStage> getShipmentStages() {
+		return (List<ShipmentStage>) shipmentStageRepository.findAll();
+	}
+	
+	public void deleteShipmentStage(int shipmentStageId) {
+		shipmentStageRepository.deleteById(shipmentStageId);
+	}
 }
